@@ -1,0 +1,189 @@
+/* убрать стрелки в инпуте */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* убрать скролл */
+.hightScroll {
+  overflow: hidden;
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+
+.backdropActiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* modal form */
+#form {
+  margin: 30px 40px 40px 40px;
+}
+
+.send-box {
+    width: 400px;
+    /* padding: 40px; */
+    background-color: rgba(1, 31, 58, 0.53);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+
+  .close-box {
+    /* width: 100%; */
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    /* padding: 10px; */
+  }
+
+  .close-btn {
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    transition: .5s;
+  }
+
+  .close-btn span{
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    border: none;
+  }
+
+  .close-btn span:nth-child(1){
+    transform: rotate(45deg);
+  }
+  .close-btn span:nth-child(2){
+    transform: rotate(-45deg);
+  }
+
+  .close-btn:hover{
+    transform: rotate(90deg);
+  }
+
+  .close-btn:hover span {
+    background: #F2AE4D;
+  }
+  
+  .send-box h3 {
+    margin: 10px 0 0;
+    font-size: 24px;
+    color: #F2AE4D;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .send-box .user-box {
+    position: relative;
+  }
+  
+  .send-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #F2AE4D;
+    outline: none;
+    background: transparent;
+  }
+  .send-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .send-box .user-box input:focus ~ label,
+  .send-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #F2AE4D;
+    font-size: 12px;
+  }
+
+
+  /* modal button */
+  .modal_button {
+      width: 100%;
+  }
+
+  .modal_button {
+    position: relative;
+    appearance: none;
+    cursor: pointer;
+    overflow: hidden;
+
+    letter-spacing: 1.96px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #fff;
+
+    border: none;
+    background: #3D5675;
+    padding: 20px 30px;
+    border-radius: 40px;
+}
+
+
+.modal_button span {
+    position: relative;
+    pointer-events: none;
+}
+
+.modal_button::before {
+    --size: 0;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, #4405f7, transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+}
+
+.modal_button:hover::before {
+    --size: 600px;
+}
+
+/*                    media                */
+
+@media screen and (max-width: 500px) {
+  .send-box {
+    width: 300px;
+  }
+}
